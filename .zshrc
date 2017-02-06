@@ -29,7 +29,7 @@ SAVEHIST=1000000
 # 2行表示
 #PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
 #%# "
-PROMPT=" %{${fg[yellow]}%}%~%{${reset_color}%} 
+PROMPT=" %{${fg[yellow]}%}%~%{${reset_color}%}
  [%n@%m]% %# "
 
 # 単語の区切り文字を指定する
@@ -153,8 +153,6 @@ elif which putclip >/dev/null 2>&1 ; then
   alias -g C='| putclip'
 fi
 
-
-
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -164,12 +162,20 @@ case ${OSTYPE} in
     alias ls='ls -G -F'
     ;;
 esac
+
+export PATH="$HOME/bin:$PATH"
  # vim:set ft=zsh:
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin::$PATH"
+export MANPATH=/opt/local/man:$MANPATH
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+eval "$(direnv hook zsh)"
 
 function peco-lscd {
 local dir="$( find . -maxdepth 1 -type d | sed -e 's;\./;;' | peco )"
 if [ ! -z "$dir" ] ; then
   cd "$dir"
 fi
-                    }
+}

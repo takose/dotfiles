@@ -3,6 +3,9 @@ set tabstop=2
 set autoindent
 set shiftwidth=2
 set expandtab
+set clipboard&
+set clipboard^=unnamedplus
+set clipboard=unnamed,autoselect
 "NeoBundle Scripts-----------------------------
 
 if &compatible
@@ -50,3 +53,4 @@ set background=dark
 autocmd ColorScheme * highlight LineNr ctermfg=179
 colorscheme hybrid
 syntax on
+

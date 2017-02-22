@@ -6,13 +6,9 @@
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
-
-# emacs 風キーバインドにする
-bindkey -e
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -23,12 +19,6 @@ SAVEHIST=1000000
     export PATH=${HOME}/.rbenv/bin:${PATH} && \
       eval "$(rbenv init -)"
 
-# プロンプト
-# 1行表示
-#PROMPT="% [%n@%m %C] %# "
-# 2行表示
-#PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-#%# "
 PROMPT=" %{${fg[yellow]}%}%~%{${reset_color}%}
  [%n@%m]% %# "
 

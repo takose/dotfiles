@@ -37,7 +37,7 @@ nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 
 "============= neobundle begin =============
-set runtimepath^=/Users/rina-t/.vim/bundle/neobundle.vim/
+set runtimepath^=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -45,15 +45,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+NeoBundle 'tpope/vim-obsession'
 
 NeoBundleCheck
-call neobundle#end()"
+call neobundle#end()
 "============= neobundle end =============
 
 filetype plugin indent on

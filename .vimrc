@@ -27,6 +27,8 @@ nnoremap st :<C-u>tabnew<CR>
 nnoremap sx :<C-u>tabclose<CR>
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
+nnoremap sn gt
+nnoremap sp gT
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l

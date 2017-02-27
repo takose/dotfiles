@@ -16,156 +16,156 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 [[ -d ~/.rbenv  ]] && \
-    export PATH=${HOME}/.rbenv/bin:${PATH} && \
-      eval "$(rbenv init -)"
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
 
 PROMPT=" %{${fg[yellow]}%}%~%{${reset_color}%}
- [%n@%m]% %# "
+[%n@%m]% %# "
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
 select-word-style default
-# ここで指定した文字は単語区切りとみなされる
-# / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
-zstyle ':zle:*' word-chars " /=;@:{},|"
-zstyle ':zle:*' word-style unspecified
+  # ここで指定した文字は単語区切りとみなされる
+  # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
+  zstyle ':zle:*' word-chars " /=;@:{},|"
+  zstyle ':zle:*' word-style unspecified
 
-########################################
-# 補完
-# 補完機能を有効にする
-autoload -Uz compinit
-compinit
+  ########################################
+  # 補完
+  # 補完機能を有効にする
+  autoload -Uz compinit
+  compinit
 
-# 補完で小文字でも大文字にマッチさせる
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+  # 補完で小文字でも大文字にマッチさせる
+  zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# ../ の後は今いるディレクトリを補完しない
-zstyle ':completion:*' ignore-parents parent pwd ..
+  # ../ の後は今いるディレクトリを補完しない
+  zstyle ':completion:*' ignore-parents parent pwd ..
 
-# sudo の後ろでコマンド名を補完する
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-  #                    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+  # sudo の後ろでコマンド名を補完する
+  zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+    #                    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
-# ps コマンドのプロセス名補完
-zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-
-
-########################################
-# vcs_info
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
-
-zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
-
-function _update_vcs_info_msg() {
-LANG=en_US.UTF-8 vcs_info
-RPROMPT="${vcs_info_msg_0_}"
-}
-add-zsh-hook precmd _update_vcs_info_msg
+  # ps コマンドのプロセス名補完
+  zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
-########################################
-# オプション
-# 日本語ファイル名を表示可能にする
-setopt print_eight_bit
+  ########################################
+  # vcs_info
+  autoload -Uz vcs_info
+  autoload -Uz add-zsh-hook
 
-# beep を無効にする
-setopt no_beep
+  zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
+  zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
-# フローコントロールを無効にする
-setopt no_flow_control
+  function _update_vcs_info_msg() {
+    LANG=en_US.UTF-8 vcs_info
+    RPROMPT="${vcs_info_msg_0_}"
+  }
+  add-zsh-hook precmd _update_vcs_info_msg
 
-# Ctrl+Dでzshを終了しない
-setopt ignore_eof
 
-# '#' 以降をコメントとして扱う
-setopt interactive_comments
+  ########################################
+  # オプション
+  # 日本語ファイル名を表示可能にする
+  setopt print_eight_bit
 
-# ディレクトリ名だけでcdする
-setopt auto_cd
+  # beep を無効にする
+  setopt no_beep
 
-# cd したら自動的にpushdする
-setopt auto_pushd
-# 重複したディレクトリを追加しない
-setopt pushd_ignore_dups
+  # フローコントロールを無効にする
+  setopt no_flow_control
 
-# 同時に起動したzshの間でヒストリを共有する
-setopt share_history
+  # Ctrl+Dでzshを終了しない
+  setopt ignore_eof
 
-# 同じコマンドをヒストリに残さない
-setopt hist_ignore_all_dups
+  # '#' 以降をコメントとして扱う
+  setopt interactive_comments
 
-# スペースから始まるコマンド行はヒストリに残さない
-setopt hist_ignore_space
+  # ディレクトリ名だけでcdする
+  setopt auto_cd
 
-# ヒストリに保存するときに余分なスペースを削除する
-setopt hist_reduce_blanks
+  # cd したら自動的にpushdする
+  setopt auto_pushd
+  # 重複したディレクトリを追加しない
+  setopt pushd_ignore_dups
 
-# 高機能なワイルドカード展開を使用する
-setopt extended_glob
+  # 同時に起動したzshの間でヒストリを共有する
+  setopt share_history
 
-########################################
-# キーバインド
+  # 同じコマンドをヒストリに残さない
+  setopt hist_ignore_all_dups
 
-# ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
-bindkey '^R' history-incremental-pattern-search-backward
+  # スペースから始まるコマンド行はヒストリに残さない
+  setopt hist_ignore_space
 
-########################################
-# エイリアス
+  # ヒストリに保存するときに余分なスペースを削除する
+  setopt hist_reduce_blanks
 
-alias la='ls -a'
-alias ll='ls -l'
+  # 高機能なワイルドカード展開を使用する
+  setopt extended_glob
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+  ########################################
+  # キーバインド
 
-alias mkdir='mkdir -p'
+  # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
+  bindkey '^R' history-incremental-pattern-search-backward
 
-# sudo の後のコマンドでエイリアスを有効にする
-alias sudo='sudo '
+  ########################################
+  # エイリアス
 
-# グローバルエイリアス
-alias -g L='| less'
-alias -g G='| grep'
+  alias la='ls -a'
+  alias ll='ls -l'
 
-# C で標準出力をクリップボードにコピーする
-# mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
-if which pbcopy >/dev/null 2>&1 ; then
-  # Mac
-  alias -g C='| pbcopy'
-elif which xsel >/dev/null 2>&1 ; then
-  # Linux
-  alias -g C='| xsel --input --clipboard'
-elif which putclip >/dev/null 2>&1 ; then
-  # Cygwin
-  alias -g C='| putclip'
-fi
+  alias rm='rm -i'
+  alias cp='cp -i'
+  alias mv='mv -i'
 
-########################################
-# OS 別の設定
-case ${OSTYPE} in
-  darwin*)
-    #Mac用の設定
-    export CLICOLOR=1
-    alias ls='ls -G -F'
-    ;;
-esac
+  alias mkdir='mkdir -p'
 
-export PATH="$HOME/bin:$PATH"
- # vim:set ft=zsh:
-export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin::$PATH"
-export MANPATH=/opt/local/man:$MANPATH
+  # sudo の後のコマンドでエイリアスを有効にする
+  alias sudo='sudo '
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+  # グローバルエイリアス
+  alias -g L='| less'
+  alias -g G='| grep'
 
-eval "$(direnv hook zsh)"
+  # C で標準出力をクリップボードにコピーする
+  # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
+  if which pbcopy >/dev/null 2>&1 ; then
+    # Mac
+    alias -g C='| pbcopy'
+  elif which xsel >/dev/null 2>&1 ; then
+    # Linux
+    alias -g C='| xsel --input --clipboard'
+  elif which putclip >/dev/null 2>&1 ; then
+    # Cygwin
+    alias -g C='| putclip'
+  fi
 
-function peco-lscd {
-local dir="$( find . -maxdepth 1 -type d | sed -e 's;\./;;' | peco )"
-if [ ! -z "$dir" ] ; then
-  cd "$dir"
-fi
-}
+  ########################################
+  # OS 別の設定
+  case ${OSTYPE} in
+    darwin*)
+      #Mac用の設定
+      export CLICOLOR=1
+      alias ls='ls -G -F'
+      ;;
+  esac
+
+  export PATH="$HOME/bin:$PATH"
+  # vim:set ft=zsh:
+  export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin::$PATH"
+  export MANPATH=/opt/local/man:$MANPATH
+
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+
+  eval "$(direnv hook zsh)"
+
+  function peco-lscd {
+    local dir="$( find . -maxdepth 1 -type d | sed -e 's;\./;;' | peco )"
+    if [ ! -z "$dir" ] ; then
+      cd "$dir"
+    fi
+  }

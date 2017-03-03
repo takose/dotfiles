@@ -108,8 +108,6 @@ select-word-style default
   ########################################
   # キーバインド
 
-  # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
-  bindkey '^R' history-incremental-pattern-search-backward
 
   ########################################
   # エイリアス
@@ -169,3 +167,18 @@ select-word-style default
       cd "$dir"
     fi
   }
+
+  _register_keycommand() {
+    zle -N $2
+    bindkey "$1" $2
+  }
+
+  peco_history(){
+    $(\history -n 1 | tail -r | peco)
+  }
+  _register_keycommand '^r' peco_history
+
+  peco_cd_by_ghq_list(){
+    cd $(ghq list --full-path | peco)
+  }
+  _register_keycommand '^@' peco_cd_by_ghq_list

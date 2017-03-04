@@ -38,24 +38,31 @@ nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 
-"============= neobundle begin =============
-set runtimepath^=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle'))
+let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+"==============dein==============
+set runtimepath+=~/dotfiles/./dein/repos/github.com/Shougo/dein.vim
 
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'tpope/vim-obsession'
+if dein#load_state('~/dotfiles/./dein')
+  call dein#begin('~/dotfiles/./dein')
 
-NeoBundleCheck
-call neobundle#end()
-"============= neobundle end =============
+  call dein#add('~/dotfiles/./dein/repos/github.com/Shougo/dein.vim')
+
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/denite.nvim')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('flazz/vim-colorschemes')
+  call dein#add('mattn/emmet-vim')
+  call dein#add('tpope/vim-obsession')
+  call dein#add('itchyny/lightline.vim')
+  let g:lightline = { 'colorscheme': 'wombat' }
+
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  call dein#end()
+  call dein#save_state()
+endif
 
 filetype plugin indent on
-syntax on
-
+syntax enable

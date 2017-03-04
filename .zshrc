@@ -153,7 +153,7 @@ select-word-style default
 
   export PATH="$HOME/bin:$PATH"
   # vim:set ft=zsh:
-  export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin::$PATH"
+  export PATH="/usr/local/bin:$PATH"
   export MANPATH=/opt/local/man:$MANPATH
 
   export PATH="$HOME/.rbenv/bin:$PATH"

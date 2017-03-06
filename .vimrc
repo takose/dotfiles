@@ -33,10 +33,13 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
+
+let g:NERDCreateDefaultMappings = 0
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDSpaceDelims = 1
+map <C-_> <Plug>NERDCommenterToggle
 
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 
@@ -56,6 +59,7 @@ if dein#load_state('~/dotfiles/./dein')
   call dein#add('mattn/emmet-vim')
   call dein#add('tpope/vim-obsession')
   call dein#add('itchyny/lightline.vim')
+  call dein#add('scrooloose/nerdcommenter')
   let g:lightline = { 'colorscheme': 'wombat' }
 
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })

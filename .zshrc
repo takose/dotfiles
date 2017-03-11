@@ -182,3 +182,8 @@ select-word-style default
     cd $(ghq list --full-path | peco)
   }
   _register_keycommand '^@' peco_cd_by_ghq_list
+
+  delayed_sleep() {
+    sleep 3
+    osascript -e 'tell application "Finder" to sleep'
+  }

@@ -39,7 +39,24 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDSpaceDelims = 1
+
 map <C-_> <Plug>NERDCommenterToggle
+
+nnoremap <silent> tb :<C-u>Tagbar<CR>
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : $HOME . '/.vim/bundle/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
 
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 
@@ -60,6 +77,11 @@ if dein#load_state('~/dotfiles/./dein')
   call dein#add('tpope/vim-obsession')
   call dein#add('itchyny/lightline.vim')
   call dein#add('scrooloose/nerdcommenter')
+  call dein#add('majutsushi/tagbar')
+  call dein#add('kannokanno/previm')
+  call dein#add('jszakmeister/markdown2ctags')
+  call dein#add('violetyk/iikanji-markdown.vim')
+
   let g:lightline = { 'colorscheme': 'wombat' }
 
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })

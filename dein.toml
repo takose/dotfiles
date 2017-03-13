@@ -1,0 +1,50 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'flazz/vim-colorschemes'
+hook_add = '''
+  set background=dark
+  au MyAutoCmd VimEnter * nested colorscheme hybrid
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'tpope/vim-obsession'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+let g:lightline = { 'colorscheme': 'wombat' }
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'jszakmeister/markdown2ctags'
+
+[[plugins]]
+repo = 'violetyk/iikanji-markdown.vim'
+
+[[plugins]]
+repo = '('Shougo/vimshell', { 'rev': '3787e5' }'

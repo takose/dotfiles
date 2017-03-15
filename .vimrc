@@ -43,20 +43,6 @@ let g:NERDSpaceDelims = 1
 map <C-_> <Plug>NERDCommenterToggle
 
 nnoremap <silent> tb :<C-u>Tagbar<CR>
-let g:tagbar_type_markdown = {
-    \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : $HOME . '/.vim/bundle/markdown2ctags/markdown2ctags.py',
-    \ 'ctagsargs' : '-f - --sort=yes',
-    \ 'kinds' : [
-        \ 's:sections',
-        \ 'i:images'
-    \ ],
-    \ 'sro' : '|',
-    \ 'kind2scope' : {
-        \ 's' : 'section',
-    \ },
-    \ 'sort': 0,
-\ }
 
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
 
@@ -68,7 +54,6 @@ if !isdirectory(s:dein_repo_dir)
   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
-" プラグイン読み込み＆キャッシュ作成
 let s:toml_file = '~/dotfiles/dein.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
@@ -76,7 +61,6 @@ if dein#load_state(s:dein_dir)
   call dein#end()
   call dein#save_state()
 endif
-" 不足プラグインの自動インストール
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif

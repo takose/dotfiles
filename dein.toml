@@ -18,7 +18,7 @@ repo = 'nathanaelkane/vim-indent-guides'
 repo = 'flazz/vim-colorschemes'
 hook_add = '''
   set background=dark
-  au MyAutoCmd VimEnter * nested colorscheme hybrid
+  "au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
 
 [[plugins]]
@@ -46,6 +46,22 @@ repo = 'kannokanno/previm'
 
 [[plugins]]
 repo = 'jszakmeister/markdown2ctags'
+hook_add = '''
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '~/dotfiles/.cache/dein/repos/github.com/jszakmeister/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+'''
 
 [[plugins]]
 repo = 'violetyk/iikanji-markdown.vim'

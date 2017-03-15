@@ -29,7 +29,11 @@ repo = 'tpope/vim-obsession'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-let g:lightline = { 'colorscheme': 'wombat' }
+hook_add = '''
+  let g:lightline = {
+    \ 'colorscheme': 'wombat'
+    \ }
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdcommenter'
@@ -45,6 +49,3 @@ repo = 'jszakmeister/markdown2ctags'
 
 [[plugins]]
 repo = 'violetyk/iikanji-markdown.vim'
-
-[[plugins]]
-repo = '('Shougo/vimshell', { 'rev': '3787e5' }'

@@ -1,2 +1,3 @@
-dein/.cache
 dein/cache_vim
+/home/.cache/*
+!/home/.cache/dein/repos/github.com/Shougo/dein.vim

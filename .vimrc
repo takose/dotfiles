@@ -47,8 +47,6 @@ map <C-_> <Plug>NERDCommenterToggle
 
 nnoremap <silent> tb :<C-u>Tagbar<CR>
 
-let g:python3_host_prog = expand('~/.pyenv/shims/python3')
-
 "==============dein==============
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/dotfiles/.cache') : $XDG_CACHE_HOME
 let s:dein_dir = s:cache_home . '/dein'

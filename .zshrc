@@ -129,6 +129,7 @@ select-word-style default
   alias -g G='| grep'
 
   alias vi='vim'
+  alias vim='nvim'
 
   # C で標準出力をクリップボードにコピーする
   # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
@@ -186,6 +187,6 @@ select-word-style default
   _register_keycommand '^@' peco_cd_by_ghq_list
 
   delayed_sleep() {
-    sleep 3
+    sleep 180
     osascript -e 'tell application "Finder" to sleep'
   }

@@ -1,0 +1,7 @@
+[user]
+  name = tako
+  email = rina.m.takase@gmail.com
+[alias]
+  sta = status
+[push]
+  default = simple

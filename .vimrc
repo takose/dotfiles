@@ -37,6 +37,8 @@ nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 
+nnoremap <Esc><Esc> :<C-u>noh<CR>
+
 let g:NERDCreateDefaultMappings = 0
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1

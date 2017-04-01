@@ -7,4 +7,5 @@
   default = simple
 [core]
 	editor = nvim
-  excludesfile = ~/dotfiles/.gitignore_global
+[ghq]
+  root = ~/src

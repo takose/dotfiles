@@ -10,6 +10,7 @@ set autoindent
 set shiftwidth=2
 set expandtab
 set clipboard=unnamed
+set mouse=
 
 " 常にステータスラインを表示
 set laststatus=2
@@ -36,6 +37,10 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
 
 nnoremap <Esc><Esc> :<C-u>noh<CR>
 

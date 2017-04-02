@@ -1,0 +1,12 @@
+#!/usr/local/bin/python
+
+import os
+import sys
+import psutil
+import commands
+
+check = commands.getoutput("git log -1 --oneline --pretty=format:'%s' | grep -e '^\[WIP\]'")
+cmdline = '\x00'.join(psutil.Process(os.getppid()).cmdline())
+if check and not ('\x00--amend' in cmdline):
+  print "your last commit is wip commit!!"
+  sys.exit(1)

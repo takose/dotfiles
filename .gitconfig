@@ -9,3 +9,5 @@
 	editor = nvim
 [ghq]
   root = ~/src
+[init]
+	templatedir = ~/dotfiles/.git_template

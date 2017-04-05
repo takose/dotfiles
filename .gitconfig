@@ -2,11 +2,12 @@
   name = tako
   email = rina.m.takase@gmail.com
 [alias]
-  sta = status
+  st = status
 [push]
   default = simple
 [core]
 	editor = nvim
+	excludesfile = ~/.gitignore_global
 [ghq]
   root = ~/src
 [init]

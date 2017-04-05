@@ -3,3 +3,4 @@
 *.swo
 .env
 .envrc
+Session.vim

@@ -189,3 +189,6 @@ zle -N peco-history-selection
     sleep 180
     osascript -e 'tell application "Finder" to sleep'
   }
+
+export NVM_DIR="~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

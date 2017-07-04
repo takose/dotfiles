@@ -8,8 +8,8 @@ tap 'caskroom/cask'
 brew install git
 brew install zsh --disable-etc-dir
 brew install zsh-completions
-brew install vim --with-lua --with-python3
-brew install macvim --with-lua --with-python3
+brew install vim --with-python3
+brew install macvim --with-python3
 brew install neovim
 brew install tmux
 brew install reattach-to-user-namespace

@@ -4,7 +4,7 @@
 [alias]
   st = status
 [push]
-  default = simple
+	default = current
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global

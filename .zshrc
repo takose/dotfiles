@@ -10,10 +10,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-[[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
-
 PROMPT=" %{${fg[yellow]}%}%~%{${reset_color}%}
 [%n@%m]% %# "
 
@@ -154,8 +150,12 @@ select-word-style default
   export PATH="/usr/local/bin:$PATH"
   export MANPATH=/opt/local/man:$MANPATH
 
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+  export PATH=/usr/local/mecab/bin:$PATH
+  export GOPATH=$HOME
+
+  [[ -d ~/.rbenv  ]] && \
+    eval "$(rbenv init -)"
+
 
   eval "$(direnv hook zsh)"
 

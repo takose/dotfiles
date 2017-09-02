@@ -96,6 +96,7 @@ select-word-style default
   # 高機能なワイルドカード展開を使用する
   setopt extended_glob
 
+  setopt nonomatch
   ########################################
   # キーバインド
 

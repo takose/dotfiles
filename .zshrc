@@ -146,7 +146,7 @@ select-word-style default
       ;;
   esac
 
-  export PATH="$HOME/bin:$PATH"
+  export PATH="$HOME/bin:$HOME/bin/config:$PATH"
   # vim:set ft=zsh:
   export PATH="/usr/local/bin:$PATH"
   export MANPATH=/opt/local/man:$MANPATH

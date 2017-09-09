@@ -6,4 +6,5 @@ ln -sf ~/.vim ~/.config/nvim/
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
+ln -sf ~/dotfiles/config/ ~/bin
 git config --global core.editor

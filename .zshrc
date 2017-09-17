@@ -177,9 +177,12 @@ select-word-style default
     CURSOR=$#BUFFER
     zle reset-prompt
   }
-
-zle -N peco-history-selection
   _register_keycommand '^r' peco_history
+
+  function cd_ghq_directory() {
+    cd $(ghq root)/$(ghq list | peco)
+  }
+  _register_keycommand '^]' cd_ghq_directory
 
   peco_cd_by_ghq_list(){
     cd $(ghq list --full-path | peco)

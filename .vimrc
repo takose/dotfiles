@@ -23,6 +23,9 @@ set encoding=UTF-8
 set fileencoding=UTF-8
 set termencoding=UTF-8
 
+set langmenu=en_US.UTF-8
+language en_US
+
 augroup MyAutoCmd
   autocmd!
 augroup END

@@ -75,3 +75,6 @@ repo = 'violetyk/iikanji-markdown.vim'
 
 [[plugins]]
 repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'

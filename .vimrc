@@ -45,6 +45,9 @@ nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 
+nnoremap <C-f> :NERDTree<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 nnoremap <Esc><Esc> :<C-u>noh<CR>
 
 let g:NERDCreateDefaultMappings = 0

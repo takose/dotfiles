@@ -78,3 +78,6 @@ repo = 'fatih/vim-go'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'

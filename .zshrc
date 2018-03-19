@@ -146,9 +146,10 @@ select-word-style default
       ;;
   esac
 
+  export PATH="~/.nodenv/shims:/usr/local/bin:/usr/bin:/bin:$PATH"
+  eval "$(nodenv init -)"
   export PATH="$HOME/bin:$HOME/bin/config:$PATH"
   # vim:set ft=zsh:
-  export PATH="/usr/local/bin:$PATH"
   export MANPATH=/opt/local/man:$MANPATH
 
   export PATH=/usr/local/mecab/bin:$PATH

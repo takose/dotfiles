@@ -1,11 +1,11 @@
-# 環境変数
+# env
 export LANG=ja_JP.UTF-8
 
-# 色を使用出来るようにする
+# color
 autoload -Uz colors
 colors
 
-# ヒストリの設定
+# history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
@@ -20,6 +20,11 @@ select-word-style default
   # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
   zstyle ':zle:*' word-chars " /=;@:{},|"
   zstyle ':zle:*' word-style unspecified
+
+  # keybind
+  bindkey -v
+  bindkey -M viins '^A'  beginning-of-line
+  bindkey -M viins '^E'  end-of-line
 
   ########################################
   # 補完
@@ -97,9 +102,6 @@ select-word-style default
   setopt extended_glob
 
   setopt nonomatch
-  ########################################
-  # キーバインド
-
 
   ########################################
   # エイリアス
@@ -113,28 +115,13 @@ select-word-style default
 
   alias mkdir='mkdir -p'
 
-  # sudo の後のコマンドでエイリアスを有効にする
-  alias sudo='sudo '
-
   # グローバルエイリアス
-  alias -g L='| less'
-  alias -g G='| grep'
-
-  alias vi='vim'
+  alias vi='nvim'
   alias vim='nvim'
 
   # C で標準出力をクリップボードにコピーする
   # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
-  if which pbcopy >/dev/null 2>&1 ; then
-    # Mac
-    alias -g C='| pbcopy'
-  elif which xsel >/dev/null 2>&1 ; then
-    # Linux
-    alias -g C='| xsel --input --clipboard'
-  elif which putclip >/dev/null 2>&1 ; then
-    # Cygwin
-    alias -g C='| putclip'
-  fi
+  alias -g C='| pbcopy'
 
   ########################################
   # OS 別の設定
@@ -158,16 +145,9 @@ select-word-style default
   [[ -d ~/.rbenv  ]] && \
     eval "$(rbenv init -)"
 
-
   eval "$(direnv hook zsh)"
 
-  function peco-lscd {
-    local dir="$( find . -maxdepth 1 -type d | sed -e 's;\./;;' | peco )"
-    if [ ! -z "$dir" ] ; then
-      cd "$dir"
-    fi
-  }
-
+  # peco
   _register_keycommand() {
     zle -N $2
     bindkey "$1" $2
@@ -180,20 +160,11 @@ select-word-style default
   }
   _register_keycommand '^r' peco_history
 
-  function cd_ghq_directory() {
-    cd $(ghq root)/$(ghq list | peco)
-  }
-  _register_keycommand '^]' cd_ghq_directory
-
   peco_cd_by_ghq_list(){
     cd $(ghq list --full-path | peco)
   }
-  _register_keycommand '^@' peco_cd_by_ghq_list
-
-  delayed_sleep() {
-    sleep 180
-    osascript -e 'tell application "Finder" to sleep'
-  }
+  _register_keycommand '^]' peco_cd_by_ghq_list
 
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+

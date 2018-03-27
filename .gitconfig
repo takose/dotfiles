@@ -6,6 +6,7 @@
   co = checkout
   cb = checkout -b
   l = log --oneline -3
+  commend = commit --amend
 [push]
 	default = current
 [core]

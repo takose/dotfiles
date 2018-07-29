@@ -134,17 +134,22 @@ select-word-style default
       ;;
   esac
 
-  export PATH="~/.nodenv/shims:/usr/local/bin:/usr/bin:/bin:$PATH"
+  export PATH="$HOME/.wantedly/bin"
+  export PATH="$PATH:$HOME/.nodenv/shims:/usr/local/bin:/usr/bin:/bin"
   eval "$(nodenv init -)"
-  export PATH="$HOME/bin:$HOME/bin/config:$PATH"
+  export PATH="$PATH:$HOME/bin:$HOME/bin/config"
+  [[ -d ~/.rbenv  ]] && \
+    eval "$(rbenv init -)"
+
   # vim:set ft=zsh:
   export MANPATH=/opt/local/man:$MANPATH
 
   export PATH=/usr/local/mecab/bin:$PATH
   export GOPATH=$HOME
+  export PYENV_ROOT=/usr/local/var/pyenv
 
-  [[ -d ~/.rbenv  ]] && \
-    eval "$(rbenv init -)"
+  if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 
   eval "$(direnv hook zsh)"
 

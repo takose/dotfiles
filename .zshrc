@@ -174,3 +174,6 @@ select-word-style default
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+
+# added by travis gem
+[ -f /Users/tako/.travis/travis.sh ] && source /Users/tako/.travis/travis.sh

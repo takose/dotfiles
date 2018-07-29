@@ -16,3 +16,6 @@
   root = ~/src
 [init]
 	templatedir = ~/dotfiles/.git_template
+[github]
+	user = takose
+	privatekey = /Users/tako/.ssh/id_rsa

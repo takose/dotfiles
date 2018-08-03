@@ -135,7 +135,7 @@ select-word-style default
   esac
 
   export PATH="$HOME/.wantedly/bin"
-  export PATH="$PATH:$HOME/.nodenv/shims:/usr/local/bin:/usr/bin:/bin"
+  export PATH="$PATH:$HOME/.nodenv/shims:/usr/local/bin:/usr/bin:/bin:/sbin"
   eval "$(nodenv init -)"
   export PATH="$PATH:$HOME/bin:$HOME/bin/config"
   [[ -d ~/.rbenv  ]] && \

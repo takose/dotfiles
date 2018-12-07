@@ -177,3 +177,7 @@ export NVM_DIR="~/.nvm"
 
 # added by travis gem
 [ -f /Users/tako/.travis/travis.sh ] && source /Users/tako/.travis/travis.sh
+
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi

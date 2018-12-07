@@ -12,3 +12,5 @@ ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/config/ ~/bin
 ln -sf ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 git config --global core.editor
+
+sh ./installer.sh ~/.cache/dein

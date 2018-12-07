@@ -10,4 +10,5 @@ ln -sf ~/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/config/ ~/bin
+ln -sf ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 git config --global core.editor

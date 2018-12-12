@@ -1,43 +1,81 @@
-#!/usr/bin/env bash
 
-brew update
-brew upgrade
+# tap repositories and their packages
 
-tap 'caskroom/cask'
+# Other Homebrew packages
+brew autoconf
+brew brew-file
+brew curl
+brew direnv
+brew freetype
+brew gcc
+brew gdbm
+brew gettext
+brew ghq
+brew gibo
+brew git
+brew gmp
+brew imagemagick
+brew isl
+brew jemalloc
+brew jpeg
+brew jq
+brew libevent
+brew libmpc
+brew libpng
+brew libtermkey
+brew libtiff
+brew libtool
+brew libuv
+brew libvterm
+brew libyaml
+brew little-cms2
+brew lua
+brew luajit
+brew mas
+brew mpfr
+brew msgpack
+brew ncurses
+brew neovim
+brew node-build
+brew nodenv
+brew oniguruma
+brew openjpeg
+brew openssl
+brew pcre2
+brew peco
+brew perl
+brew pkg-config
+brew python
+brew rbenv
+brew readline
+brew reattach-to-user-namespace
+brew ruby
+brew ruby-build
+brew sqlite
+brew tig
+brew tmux
+brew unibilium
+brew vim
+brew webp
+brew xz
+brew zsh
+brew zsh-completions
 
-brew install git
-brew install zsh --disable-etc-dir
-brew install zsh-completions
-brew install vim --with-python3
-brew install macvim --with-python3
-brew install neovim
-brew install tmux
-brew install reattach-to-user-namespace
+# Other Cask applications
+cask adobe-creative-cloud
+cask alfred
+cask bettertouchtool
+cask dash
+cask evernote
+cask google-japanese-ime
+cask postgres
+cask sketch
+cask slack
+cask visual-studio-code
 
-brew install heroku-toolbelt
-brew install imagemagick
-
-brew install gcc
-brew install curl
-brew install tig
-brew install peco
-brew install ghq
-brew install direnv
-brew install gibo
-brew install automake
-brew install ngrok
-
-brew cask update
-
-brew cask install alfred
-brew cask install iterm2
-brew cask install postgres
-brew cask install docker-toolbox
-
-brew cask install google-chrome
-brew cask install google-japanese-ime
-brew cask install evernote
-
-brew cask install dash
-brew cask install adobe-creative-cloud
-brew cask install slack
+# App Store applications
+appstore 682658836 GarageBand (10.3.1)
+appstore 408981434 iMovie (10.1.9)
+appstore 409183694 Keynote (8.2)
+appstore 409203825 Numbers (5.2)
+appstore 409201541 Pages (7.2)

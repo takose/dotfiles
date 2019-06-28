@@ -79,5 +79,6 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
+autocmd BufNewFile,BufRead *.ruby  set filetype=ruby
 filetype plugin indent on
 syntax enable

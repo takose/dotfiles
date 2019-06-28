@@ -1,63 +1,64 @@
 
 # tap repositories and their packages
 
+tap git@github.com:wantedly/homebrew-tools
+
+tap heroku/brew
+brew heroku
+brew heroku/brew/heroku-node
+
+tap wagoodman/dive
+brew dive
+
+tap wantedly/tools
+brew rid
+brew valec
+brew valecjr
+
+tap wantedly/tools
+
 # Other Homebrew packages
 brew autoconf
 brew brew-file
 brew curl
 brew direnv
-brew freetype
+brew ffmpeg
 brew gcc
-brew gdbm
-brew gettext
 brew ghq
 brew gibo
 brew git
-brew gmp
 brew imagemagick
-brew isl
-brew jemalloc
 brew jpeg
 brew jq
-brew libevent
-brew libmpc
-brew libpng
-brew libtermkey
-brew libtiff
-brew libtool
-brew libuv
-brew libvterm
-brew libyaml
-brew little-cms2
 brew lua
-brew luajit
-brew mas
-brew mpfr
-brew msgpack
-brew ncurses
+brew mysql
 brew neovim
+brew node
 brew node-build
 brew nodenv
+brew npm
 brew oniguruma
-brew openjpeg
 brew openssl
-brew pcre2
+brew pandoc
+brew pandoc-crossref
 brew peco
 brew perl
-brew pkg-config
+brew postgresql
 brew python
 brew rbenv
 brew readline
-brew reattach-to-user-namespace
+brew redis
 brew ruby
 brew ruby-build
 brew sqlite
+brew sshfs
 brew tig
 brew tmux
-brew unibilium
+brew tree
 brew vim
-brew webp
-brew xz
+brew watch
+brew wget
+brew yarn
 brew zsh
 brew zsh-completions
 
@@ -65,13 +66,21 @@ brew zsh-completions
 cask adobe-creative-cloud
 cask alfred
 cask bettertouchtool
+cask cyberduck
 cask dash
+cask docker
 cask evernote
+cask firefox
 cask google-japanese-ime
+cask insomnia
+cask mactex
+cask osxfuse
 cask postgres
 cask sketch
 cask slack
+cask spotify
 cask visual-studio-code
+cask zeplin
 
 # App Store applications
 appstore 682658836 GarageBand (10.3.1)

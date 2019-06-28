@@ -12,6 +12,7 @@ ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/config/ ~/bin
 ln -sf ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
+ln -sf ~/Dropbox/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ~/dotfiles/Brewfile /.config/brewfile/Brewfile
 git config --global core.editor
 

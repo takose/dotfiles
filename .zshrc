@@ -108,7 +108,7 @@ select-word-style default
 
   alias la='ls -a'
   alias ll='ls -l'
-  alias tree='tree -l 2 --ignore "./node_modules"'
+  alias tree='tree -I "node_modules"'
 
   alias rm='rm -i'
   alias cp='cp -i'

@@ -115,6 +115,12 @@ select-word-style default
   alias mv='mv -i'
 
   alias mkdir='mkdir -p'
+  if [[ -n $TMUX ]]; then
+    alias ta='tmux switch-client -t'
+  else
+    alias ta='tmux attach-session -t'
+  fi
+  alias tkss='tmux kill-session -t'
 
   # グローバルエイリアス
   alias vi='nvim'

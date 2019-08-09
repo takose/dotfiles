@@ -55,6 +55,7 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDSpaceDelims = 1
+let g:NERDTreeShowHidden = 1
 
 map <C-_> <Plug>NERDCommenterToggle
 

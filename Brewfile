@@ -18,6 +18,7 @@ brew valecjr
 tap wantedly/tools
 
 # Other Homebrew packages
+brew ag
 brew autoconf
 brew brew-file
 brew curl
@@ -41,8 +42,10 @@ brew oniguruma
 brew openssl
 brew pandoc
 brew pandoc-crossref
+brew pcre
 brew peco
 brew perl
+brew pkg-config
 brew postgresql
 brew python
 brew rbenv
@@ -58,6 +61,7 @@ brew tree
 brew vim
 brew watch
 brew wget
+brew xz
 brew yarn
 brew zsh
 brew zsh-completions

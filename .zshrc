@@ -10,8 +10,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-PROMPT=" %{${fg[yellow]}%}%~%{${reset_color}%}
-[%n@%m]% %# "
+PROMPT="%{${fg[yellow]}%}%D{%f/%m/%y} %D{%L:%M:%S} %~ %{${reset_color}%}
+[%n@%m] % %# "
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style

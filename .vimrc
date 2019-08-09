@@ -69,10 +69,11 @@ if !isdirectory(s:dein_repo_dir)
   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
-let s:toml_file = '~/dotfiles/dein.toml'
+let s:dein_config_dir = '~/dotfiles'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  call dein#load_toml(s:toml_file)
+  call dein#load_toml(s:dein_config_dir . '/dein.toml', {'lazy': 0})
+  call dein#load_toml(s:dein_config_dir . '/deinlazy.toml', {'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif

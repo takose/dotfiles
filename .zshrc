@@ -116,17 +116,15 @@ select-word-style default
 
   alias mkdir='mkdir -p'
   if [[ -n $TMUX ]]; then
-    alias ta='tmux switch-client -t'
+    alias tas='tmux switch-client -t'
   else
-    alias ta='tmux attach-session -t'
+    alias tas='tmux attach-session -t'
   fi
-  alias tkss='tmux kill-session -t'
+  alias tks='tmux kill-session -t'
 
-  # グローバルエイリアス
   alias vi='nvim'
   alias vim='nvim'
 
-  # C で標準出力をクリップボードにコピーする
   # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
   alias -g C='| pbcopy'
 

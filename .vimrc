@@ -85,3 +85,7 @@ au BufNewFile,BufRead *.jbuilder setf ruby
 autocmd BufNewFile,BufRead *.ruby  set filetype=ruby
 filetype plugin indent on
 syntax enable
+
+hi LineNr ctermfg=242
+hi CursorLineNr ctermbg=242
+hi Visual ctermbg=126

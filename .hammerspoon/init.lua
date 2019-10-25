@@ -90,6 +90,7 @@ remapKey({'ctrl'}, 'y', keyCode('v', {'cmd'}))
 remapKey({'ctrl'}, 's', keyCode('f', {'cmd'}))
 remapKey({'ctrl'}, '/', keyCode('z', {'cmd'}))
 remapKey({'ctrl'}, 'g', keyCode('escape'))
+remapKey({'ctrl'}, '[', keyCode('escape'))
 
 -- ページスクロール
 remapKey({'ctrl'}, 'v', keyCode('pagedown'))

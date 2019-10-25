@@ -23,6 +23,7 @@ brew autoconf
 brew brew-file
 brew curl
 brew direnv
+brew envchain
 brew ffmpeg
 brew gcc
 brew ghq

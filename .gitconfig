@@ -12,6 +12,7 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [ghq]
   root = ~/src
 [init]
@@ -19,3 +20,5 @@
 [github]
 	user = takose
 	privatekey = /Users/tako/.ssh/id_rsa
+[diff-so-fancy]
+	stripLeadingSymbols = false

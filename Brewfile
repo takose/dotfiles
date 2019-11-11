@@ -48,6 +48,7 @@ brew peco
 brew perl
 brew pkg-config
 brew postgresql
+brew protobuf
 brew python
 brew rbenv
 brew readline

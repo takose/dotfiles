@@ -24,6 +24,7 @@ brew brew-file
 brew curl
 brew direnv
 brew envchain
+brew exa
 brew ffmpeg
 brew gcc
 brew ghq

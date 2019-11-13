@@ -106,8 +106,9 @@ select-word-style default
   ########################################
   # エイリアス
 
-  alias la='ls -a'
-  alias ll='ls -l'
+  alias ls='exa'
+  alias la='exa -a'
+  alias ll='exa -l'
   alias tree='tree -I "node_modules"'
 
   alias rm='rm -i'

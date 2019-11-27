@@ -85,6 +85,7 @@ remapKey({'ctrl'}, 'p', keyCode('up'))
 -- テキスト編集
 remapKey({'ctrl'}, 'w', keyCode('x', {'cmd'}))
 remapKey({'ctrl'}, 'y', keyCode('v', {'cmd'}))
+remapKey({'ctrl'}, 'h', keyCode('delete'))
 
 -- コマンド
 remapKey({'ctrl'}, 's', keyCode('f', {'cmd'}))

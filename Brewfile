@@ -26,6 +26,7 @@ brew direnv
 brew envchain
 brew exa
 brew ffmpeg
+brew fzf
 brew gcc
 brew ghq
 brew gibo

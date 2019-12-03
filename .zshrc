@@ -186,3 +186,5 @@ export NVM_DIR="~/.nvm"
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

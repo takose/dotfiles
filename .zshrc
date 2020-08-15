@@ -145,7 +145,7 @@ select-word-style default
   esac
 
   export PATH="$HOME/.wantedly/bin"
-  export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/sbin:/Library/TeX/texbin"
+  export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/sbin:/Library/TeX/texbin:/usr/sbin"
   eval "$(nodenv init -)"
   export PATH="$PATH:$HOME/bin:$HOME/bin/config"
   [[ -d ~/.rbenv  ]] && \
@@ -156,6 +156,8 @@ select-word-style default
 
   export PATH=/usr/local/mecab/bin:$PATH
   export GOPATH=$HOME
+  export PATH=$GOPATH/bin:$PATH
+  export GO111MODULE=on
   export PYENV_ROOT=/usr/local/var/pyenv
 
   if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -169,12 +171,12 @@ select-word-style default
     bindkey "$1" $2
   }
 
-  function peco_history() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
-  }
-  _register_keycommand '^r' peco_history
+  # function peco_history() {
+  #   BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+  #   CURSOR=$#BUFFER
+  #   zle reset-prompt
+  # }
+  # _register_keycommand '^r' peco_history
 
   peco_cd_by_ghq_list(){
     cd $(ghq list --full-path | peco)

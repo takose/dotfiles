@@ -6,3 +6,5 @@
 Session.vim
 .wercker/*
 .vscode/*
+telepresence.log
+.env.bk

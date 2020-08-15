@@ -96,3 +96,11 @@ remapKey({'ctrl'}, '[', keyCode('escape'))
 -- ページスクロール
 remapKey({'cmd', 'shift'}, ',', keyCode('home'))
 remapKey({'cmd', 'shift'}, '.', keyCode('end'))
+
+
+local function keyStrokeFunc(mods, key)
+  return function() hs.eventtap.keyStroke(mods, key, 0) end
+end
+
+remapKey({'cmd', 'shift', 'option'}, 'e', keyStrokeFunc({}, eisuu))
+remapKey({'cmd', 'shift', 'option'}, 'k', keyStrokeFunc({}, kana))

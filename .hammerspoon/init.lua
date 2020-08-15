@@ -94,7 +94,5 @@ remapKey({'ctrl'}, 'g', keyCode('escape'))
 remapKey({'ctrl'}, '[', keyCode('escape'))
 
 -- ページスクロール
-remapKey({'ctrl'}, 'v', keyCode('pagedown'))
-remapKey({'alt'}, 'v', keyCode('pageup'))
 remapKey({'cmd', 'shift'}, ',', keyCode('home'))
 remapKey({'cmd', 'shift'}, '.', keyCode('end'))

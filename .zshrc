@@ -195,3 +195,9 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi

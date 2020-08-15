@@ -10,8 +10,27 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-PROMPT="%{${fg[yellow]}%}%D{%f/%m/%y} %D{%L:%M:%S} %~ %{${reset_color}%}
+autoload -Uz vcs_info
+########################################
+# vcs_info
+autoload -Uz add-zsh-hook
+
+# zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
+zstyle ':vcs_info:*' actionformats '%F{red} %b|%a %f'
+
+function _update_vcs_info_msg() {
+  LANG=en_US.UTF-8 vcs_info
+  RPROMPT="${vcs_info_msg_0_}"
+  PROMPT="%{${fg[yellow]}%}%D{%f/%m/%y} %D{%L:%M:%S} %F{84}%~ %F{212}${vcs_info_msg_0_} $KUBE_FORK_TARGET_ENV %{${reset_color}%}
 [%n@%m] % %# "
+}
+add-zsh-hook precmd _update_vcs_info_msg
+
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats 'on %b'
+
+setopt PROMPT_SUBST
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -44,22 +63,6 @@ select-word-style default
 
   # ps コマンドのプロセス名補完
   zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-
-
-  ########################################
-  # vcs_info
-  autoload -Uz vcs_info
-  autoload -Uz add-zsh-hook
-
-  zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
-  zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
-
-  function _update_vcs_info_msg() {
-    LANG=en_US.UTF-8 vcs_info
-    RPROMPT="${vcs_info_msg_0_}"
-  }
-  add-zsh-hook precmd _update_vcs_info_msg
-
 
   ########################################
   # オプション
@@ -102,6 +105,8 @@ select-word-style default
   setopt extended_glob
 
   setopt nonomatch
+
+  setopt prompt_subst
 
   ########################################
   # エイリアス

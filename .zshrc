@@ -179,7 +179,7 @@ select-word-style default
   # _register_keycommand '^r' peco_history
 
   peco_cd_by_ghq_list(){
-    cd $(ghq list --full-path | peco)
+    cd $(ghq list --full-path | fzf)
   }
   _register_keycommand '^]' peco_cd_by_ghq_list
 

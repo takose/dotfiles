@@ -20,7 +20,6 @@ zstyle ':vcs_info:*' actionformats '%F{red} %b|%a %f'
 
 function _update_vcs_info_msg() {
   LANG=en_US.UTF-8 vcs_info
-  RPROMPT="${vcs_info_msg_0_}"
   PROMPT="%{${fg[yellow]}%}%D{%f/%m/%y} %D{%L:%M:%S} %F{84}%~ %F{212}${vcs_info_msg_0_} $KUBE_FORK_TARGET_ENV %{${reset_color}%}
 [%n@%m] % %# "
 }

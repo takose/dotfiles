@@ -193,7 +193,7 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/dotfiles/.fzf.zsh ] && source ~/dotfiles/.fzf.zsh
 
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff -u'

@@ -2,8 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # color
-autoload -Uz colors
-colors
+autoload -Uz colors && colors
 
 # history
 HISTFILE=~/.zsh_history
@@ -20,8 +19,8 @@ zstyle ':vcs_info:*' actionformats '%F{red} %b|%a %f'
 
 function _update_vcs_info_msg() {
   LANG=en_US.UTF-8 vcs_info
-  PROMPT="%{${fg[yellow]}%}%D{%f/%m/%y} %D{%L:%M:%S} %F{84}%~ %F{212}${vcs_info_msg_0_} $KUBE_FORK_TARGET_ENV %{${reset_color}%}
-[%n@%m] % %# "
+  PROMPT="%{${fg[yellow]}%}%D{%f/%m/%y} %D{%L:%M:%S} %F{84}%~ %F{212}${vcs_info_msg_0_} %{${reset_color}%} $KUBE_FORK_TARGET_ENV
+%(?.%{$fg_bold[green]%}:).%{$fg_bold[red]%}:P)%{$reset_color%} %(!,#,%%) "
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
@@ -39,16 +38,10 @@ select-word-style default
   zstyle ':zle:*' word-chars " /=;@:{},|"
   zstyle ':zle:*' word-style unspecified
 
-  # keybind
+  # keybind emacs mode
   bindkey -e
-  bindkey -M viins '^A'  beginning-of-line
-  bindkey -M viins '^E'  end-of-line
 
-  ########################################
-  # 補完
-  # 補完機能を有効にする
-  autoload -Uz compinit
-  compinit
+  autoload -Uz compinit && compinit
 
   # 補完で小文字でも大文字にマッチさせる
   zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -68,7 +61,6 @@ select-word-style default
   # 日本語ファイル名を表示可能にする
   setopt print_eight_bit
 
-  # beep を無効にする
   setopt no_beep
 
   # フローコントロールを無効にする
@@ -107,9 +99,6 @@ select-word-style default
 
   setopt prompt_subst
 
-  ########################################
-  # エイリアス
-
   alias ls='exa'
   alias la='exa -a'
   alias ll='exa -l'
@@ -133,34 +122,22 @@ select-word-style default
   # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
   alias -g C='| pbcopy'
 
-  ########################################
-  # OS 別の設定
-  case ${OSTYPE} in
-    darwin*)
-      #Mac用の設定
-      export CLICOLOR=1
-      alias ls='ls -G -F'
-      ;;
-  esac
+  export CLICOLOR=1
+  export PATH="$HOME/.wantedly/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/bin:$HOME/bin/config"
 
-  export PATH="$HOME/.wantedly/bin"
-  export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/sbin:/Library/TeX/texbin:/usr/sbin"
   eval "$(nodenv init -)"
-  export PATH="$PATH:$HOME/bin:$HOME/bin/config"
   [[ -d ~/.rbenv  ]] && \
     eval "$(rbenv init -)"
 
   # vim:set ft=zsh:
   export MANPATH=/opt/local/man:$MANPATH
 
-  export PATH=/usr/local/mecab/bin:$PATH
   export GOPATH=$HOME
   export PATH=$GOPATH/bin:$PATH
   export GO111MODULE=on
+
   export PYENV_ROOT=/usr/local/var/pyenv
-
   if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 
   eval "$(direnv hook zsh)"
 
@@ -170,30 +147,25 @@ select-word-style default
     bindkey "$1" $2
   }
 
-  # function peco_history() {
-  #   BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-  #   CURSOR=$#BUFFER
-  #   zle reset-prompt
-  # }
-  # _register_keycommand '^r' peco_history
-
-  peco_cd_by_ghq_list(){
+  fzf_cd_by_ghq_list(){
     cd $(ghq list --full-path | fzf)
   }
-  _register_keycommand '^]' peco_cd_by_ghq_list
+  _register_keycommand '^]' fzf_cd_by_ghq_list
 
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
 # added by travis gem
-[ -f /Users/tako/.travis/travis.sh ] && source /Users/tako/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 
 [ -f ~/dotfiles/.fzf.zsh ] && source ~/dotfiles/.fzf.zsh
+export FZF_CTRL_T_OPTS='--preview "bat  --color=always --theme=Nord --style=header,grid --line-range :100 {}"'
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff -u'

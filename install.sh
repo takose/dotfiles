@@ -17,6 +17,7 @@ ln -sf ~/dotfiles/Brewfile /.config/brewfile/Brewfile
 git config --global core.editor
 
 brew file install
+brew bundle
 sh ./installer.sh ~/.cache/dein
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 

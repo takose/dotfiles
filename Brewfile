@@ -19,7 +19,6 @@ tap wantedly/tools
 
 # Other Homebrew packages
 brew ag
-brew autoconf
 brew brew-file
 brew curl
 brew direnv
@@ -31,24 +30,18 @@ brew gcc
 brew ghq
 brew gibo
 brew git
-brew imagemagick
-brew jpeg
 brew jq
 brew lua
-brew mysql
 brew neovim
 brew node
 brew node-build
 brew nodenv
 brew npm
-brew oniguruma
 brew openssl
 brew pandoc
 brew pandoc-crossref
-brew pcre
 brew peco
 brew perl
-brew pkg-config
 brew postgresql
 brew protobuf
 brew python
@@ -65,7 +58,6 @@ brew tree
 brew vim
 brew watch
 brew wget
-brew xz
 brew yarn
 brew zsh
 brew zsh-completions

@@ -1,11 +1,17 @@
 
 # tap repositories and their packages
 
+tap datawire/blackbird
+brew telepresence
+
 tap git@github.com:wantedly/homebrew-tools
 
 tap heroku/brew
 brew heroku
 brew heroku/brew/heroku-node
+
+tap nodenv/nodenv
+brew node-build-update-defs
 
 tap wagoodman/dive
 brew dive
@@ -21,6 +27,7 @@ tap wantedly/tools
 brew ag
 brew autoconf
 brew brew-file
+brew colordiff
 brew curl
 brew direnv
 brew envchain
@@ -31,6 +38,8 @@ brew gcc
 brew ghq
 brew gibo
 brew git
+brew go
+brew htop
 brew imagemagick
 brew jpeg
 brew jq
@@ -43,6 +52,7 @@ brew nodenv
 brew npm
 brew oniguruma
 brew openssl
+brew openssl@1.1
 brew pandoc
 brew pandoc-crossref
 brew pcre
@@ -52,9 +62,11 @@ brew pkg-config
 brew postgresql
 brew protobuf
 brew python
+brew python@3.8
 brew rbenv
 brew readline
 brew redis
+brew ripgrep
 brew ruby
 brew ruby-build
 brew sqlite

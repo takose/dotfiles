@@ -178,3 +178,6 @@ if [ -f '/Users/tako/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tako/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tako/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tako/google-cloud-sdk/completion.zsh.inc'; fi
+
+# added by travis gem
+[ ! -s /Users/rina/.travis/travis.sh ] || source /Users/rina/.travis/travis.sh

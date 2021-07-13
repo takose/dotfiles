@@ -46,6 +46,7 @@ nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 nnoremap <C-n> <C-e>
 nnoremap <C-p> <C-y>
+nnoremap <Space><Space> :Files<CR>
 
 nnoremap <C-f> :NERDTree<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -63,25 +64,19 @@ map <C-_> <Plug>NERDCommenterToggle
 
 nnoremap <silent> tb :<C-u>Tagbar<CR>
 
-"==============dein==============
-let s:cache_home = expand('~/dotfiles/.cache')
-let s:dein_dir = s:cache_home . '/dein'
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-if !isdirectory(s:dein_repo_dir)
-  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
-endif
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
-let s:dein_config_dir = '~/dotfiles'
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-  call dein#load_toml(s:dein_config_dir . '/dein.toml', {'lazy': 0})
-  call dein#load_toml(s:dein_config_dir . '/deinlazy.toml', {'lazy': 1})
-  call dein#end()
-  call dein#save_state()
-endif
-if has('vim_starting') && dein#check_install()
-  call dein#install()
-endif
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'w0ng/vim-hybrid'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'fatih/vim-go'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+colorscheme hybrid
 
 au BufNewFile,BufRead *.jbuilder setf ruby
 autocmd BufNewFile,BufRead *.ruby  set filetype=ruby

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : " wh = User.find(18198676).profile.working_histories.first\n pid = User.find(18198676).profile.id\n wh.general_outputs.create(title: 'Awesome General Output', end_date: Date.new(2020, 3, 10), description: 'Planche vide froid. Même suite traîner espérer remplacer toute espérer. Digne matière transformer animer.', profile_id: pid)\nwh.number_outputs.create(title: 'Awesome Number Output', end_date: Date.new(2020, 3, 10), description: 'Planche vide froid. Même suite traîner espérer remplacer toute espérer. Digne matière transformer animer.', figure: \"100%\", profile_id: pid)\nwh.visual_outputs.create!(title: 'Awesome Visual Output', image_url: \"https:\/\/dummyimage.com\/256x256\/b3b3b3\/ffffff&text=VisualOutput\", end_date: Date.new(2020, 3, 3), description: 'Such tree should according picture follow strong. Executive month rule lose less. Mind Congress quality ask.', profile_id: pid, visual_type: :image)\n",
+    "uid" : "EE3C0141-16BE-476E-BA19-89216C0B54E0",
+    "name" : "Generate Output",
+    "keyword" : "output"
+  }
+}

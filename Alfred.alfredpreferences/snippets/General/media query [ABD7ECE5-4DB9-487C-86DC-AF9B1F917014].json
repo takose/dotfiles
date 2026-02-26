@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "  @media (min-width: ${`${MOBILE_BREAKPOINT + 1}px`}) {\n  }\n  @media (max-width: ${`${MOBILE_BREAKPOINT}px`}) {\n  }",
+    "uid" : "ABD7ECE5-4DB9-487C-86DC-AF9B1F917014",
+    "name" : "media query",
+    "keyword" : ""
+  }
+}

@@ -14,6 +14,7 @@ ln -sf ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 # ln -sf ~/Dropbox/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ~/dotfiles/Brewfile /.config/brewfile/Brewfile
 ln -sf ~/dotfiles/.aerospace.toml ~/.aerospace.toml
+ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
 git config --global core.editor
 
 brew file install

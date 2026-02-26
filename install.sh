@@ -2,7 +2,7 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install rcmdnk/file/brew-file
 
-ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+# ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
@@ -13,6 +13,7 @@ ln -sf ~/dotfiles/config/ ~/bin
 ln -sf ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 # ln -sf ~/Dropbox/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ~/dotfiles/Brewfile /.config/brewfile/Brewfile
+ln -sf ~/dotfiles/.aerospace.toml ~/.aerospace.toml
 git config --global core.editor
 
 brew file install

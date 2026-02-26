@@ -6,10 +6,12 @@ brew install rcmdnk/file/brew-file
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+mkdir ~/.config/nvim
 ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/config/ ~/bin
+mkdir ~/.hammerspoon
 ln -sf ~/dotfiles/.hammerspoon/init.lua ~/.hammerspoon/init.lua
 # ln -sf ~/Dropbox/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -sf ~/dotfiles/Brewfile /.config/brewfile/Brewfile

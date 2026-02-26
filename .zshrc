@@ -36,16 +36,7 @@ select-word-style default
   # ここで指定した文字は単語区切りとみなされる
   # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
   zstyle ':zle:*' word-chars " /=;@:{},|"
-  zstyle ':zle:*' word-style unspecified
-
-  # keybind emacs mode
-  bindkey -e
-
-  autoload -Uz compinit && compinit
-
-  # 補完で小文字でも大文字にマッチさせる
-  zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
+  zstyle ':zle:*' word-style unspecified # keybind emacs mode bindkey -e autoload -Uz compinit && compinit # 補完で小文字でも大文字にマッチさせる zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
   # ../ の後は今いるディレクトリを補完しない
   zstyle ':completion:*' ignore-parents parent pwd ..
 
@@ -123,7 +114,7 @@ select-word-style default
   alias -g C='| pbcopy'
 
   export CLICOLOR=1
-  export PATH="$HOME/.wantedly/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/bin:$HOME/bin/config"
+  export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin:$HOME/bin:$HOME/bin/config"
 
   eval "$(nodenv init -)"
   [[ -d ~/.rbenv  ]] && \
